@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    title Local Weather
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src="https://use.fontawesome.com/d891ebaa12.js")
+    link(rel="stylesheet" href="css/style.css")
+    
+  body
+    .site-content
+      h2 Local Weather
+      .container
+        img.icon
+        h3.weather
+        p.location
+        h2#tempc.temp
+        h2#tempf.temp.hidden
+        button.tempChange change to: &deg;
+          span.altTemp F
+
+    <!-- generic footer -->
+    footer
+      div
+        .icons
+          a(href="https://www.freecodecamp.com/chazmcgrill")
+            i(aria-hidden="true").fa.fa-free-code-camp
+          a(href="https://twitter.com/charlietcoder")
+            i(aria-hidden="true").fa.fa-twitter
+          a(href="https://github.com/chazmcgrill")
+            i(aria-hidden="true").fa.fa-github
+          a(href="https://www.linkedin.com/in/charlie-taylor-941434134/")
+            i(aria-hidden="true").fa.fa-linkedin
+          a(href="https://codepen.io/chazmcgrill/")
+            i(aria-hidden="true").fa.fa-codepen
+        p designed and coded by <a href="https://www.charlietaylorcoder.com">charlie taylor</a>
+        
+    script(src="js/jquery-3.2.1.min.js")
+    script(src="js/app.js")

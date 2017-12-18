@@ -1,52 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://use.fontawesome.com/d891ebaa12.js"></script>
-</head>
-<body class="site">
-
-  <div class="site-content">
-    <h1>Weather App</h1>
-    <i id="icon" class="fa fa-5x"></i>
-    <h3 class="weather"></h3>
-    <h3 class="location"></h3>
-    <h2 id="tempc" class=""></h2>
-    <h2 id="tempf" class="hidden"></h2>
-    <button id="tempChange">change to: &deg;<span id="altTemp">F</span></button>
-  </div>
-
-  <!-- <footer>Generic Footer</footer> -->
-  <footer class="footer">
-    <div>
-      <div class="icons">
-        <a href="https://www.freecodecamp.com/chazmcgrill">
-          <i class="fa fa-free-code-camp" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/charlietdev">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/chazmcgrill">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/charlie-taylor-941434134/">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://codepen.io/chazmcgrill/">
-          <i class="fa fa-codepen" aria-hidden="true"></i>
-        </a>
+  <head>
+    <title>Local Weather</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/d891ebaa12.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="site-content">
+      <h2>Local Weather</h2>
+      <div class="container"><img class="icon">
+        <h3 class="weather"></h3>
+        <p class="location"></p>
+        <h2 class="temp" id="tempc"></h2>
+        <h2 class="temp hidden" id="tempf"></h2>
+        <button class="tempChange">change to: &deg;<span class="altTemp">F</span></button>
       </div>
-      <p>designed and coded by <a href="http://www.hurricanecharlie.co.uk">charlie taylor</a></p>
-      <p><a href="https://darksky.net/poweredby/">powered by dark sky</a></p>
-    </div>
-  </footer>
-
-  <!-- scripts -->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-</body>
+    </div><!-- generic footer -->
+    <footer>
+      <div>
+        <div class="icons"><a href="https://www.freecodecamp.com/chazmcgrill"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a><a href="https://twitter.com/charlietcoder"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://github.com/chazmcgrill"><i class="fa fa-github" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/charlie-taylor-941434134/"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="https://codepen.io/chazmcgrill/"><i class="fa fa-codepen" aria-hidden="true"></i></a></div>
+        <p>designed and coded by <a href="https://www.charlietaylorcoder.com">charlie taylor</a></p>
+      </div>
+    </footer>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
