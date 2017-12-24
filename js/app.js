@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
   var APIurl = "https://fcc-weather-api.glitch.me/";
 
   // get geolocation request populate obj
@@ -20,8 +20,8 @@ $(document).ready(function(){
         $(".icon").attr("src", data.weather[0].icon);
         $(".weather").html(data.weather[0].main);
         $(".location").html(data.name);
-        $("#tempc").html(Math.round((tempVal - 32) * 5 / 9) + "&deg;C");
-        $("#tempf").html(Math.round(tempVal) + "&deg;F");
+        $("#tempc").html(Math.round(tempVal) + "&deg;C");
+        $("#tempf").html(Math.round((tempVal * 1.8) + 32) + "&deg;F");
       },
       error: function(error){
         $(".weather").html("Error Please Retry");

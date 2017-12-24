@@ -20,7 +20,7 @@ body {
   margin: 20px auto;
   background: #d9e1e8;
   border-radius: 3px;
-  box-shadow: 0 3px 6px rgba(155, 174, 200, 0.16), 0 3px 6px rgba(155, 174, 200, 0.23); }
+  box-shadow: 0 3px 6px rgba(40, 44, 55, 0.16), 0 3px 6px rgba(40, 44, 55, 0.23); }
 
 .location {
   font-size: 1rem;
