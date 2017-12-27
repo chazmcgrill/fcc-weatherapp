@@ -1,5 +1,4 @@
-
-$(document).ready(function() {
+$(document).ready(() => {
   var APIurl = "https://fcc-weather-api.glitch.me/";
 
   // get geolocation request populate obj
@@ -14,23 +13,25 @@ $(document).ready(function() {
   function getWeather(url) {
     $.ajax({
       url: url,
-      success: function(data) {
-        console.log(data);
-        let tempVal = data.main.temp;
+      success: data => {
+        let temp = {
+          c: `${Math.round(data.main.temp)}&deg;C`,
+          f: `${Math.round((data.main.temp * 1.8) + 32)}&deg;F`
+        };
         $(".icon").attr("src", data.weather[0].icon);
         $(".weather").html(data.weather[0].main);
         $(".location").html(data.name);
-        $("#tempc").html(Math.round(tempVal) + "&deg;C");
-        $("#tempf").html(Math.round((tempVal * 1.8) + 32) + "&deg;F");
+        $("#tempc").html(temp.c);
+        $("#tempf").html(temp.f);
       },
-      error: function(error){
+      error: error => {
         $(".weather").html("Error Please Retry");
       },
     });
   }
 
   // button for farenheit to celcius
-  $(".tempChange").click(function(){
+  $(".tempChange").click(() => {
     $('.temp').toggleClass('hidden');
     $('.altTemp').html($('.altTemp').text() == 'C' ? 'F' : 'C');
   });
