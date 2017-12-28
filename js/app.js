@@ -1,7 +1,7 @@
 $(document).ready(() => {
   var APIurl = "https://fcc-weather-api.glitch.me/";
 
-  // get geolocation request populate obj
+  // get geolocation and generate url
   navigator.geolocation.getCurrentPosition(position => {
     const LAT = position.coords.latitude;
     const LON = position.coords.longitude;
@@ -9,25 +9,25 @@ $(document).ready(() => {
     getWeather(URL);
   });
 
-  // find weather ajax request
+  // call api using es6 promises update data
   function getWeather(url) {
-    $.ajax({
-      url: url,
-      success: data => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
         let temp = {
           c: `${Math.round(data.main.temp)}&deg;C`,
           f: `${Math.round((data.main.temp * 1.8) + 32)}&deg;F`
         };
+
         $(".icon").attr("src", data.weather[0].icon);
         $(".weather").html(data.weather[0].main);
         $(".location").html(data.name);
         $("#tempc").html(temp.c);
         $("#tempf").html(temp.f);
-      },
-      error: error => {
-        $(".weather").html("Error Please Retry");
-      },
-    });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   // button for farenheit to celcius
