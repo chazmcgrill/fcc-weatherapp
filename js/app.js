@@ -26,7 +26,7 @@ $(document).ready(() => {
         $("#tempf").html(temp.f);
       })
       .catch(error => {
-        console.log(error);
+        $(".weather").html("Error Please Retry");
       });
   }
 
