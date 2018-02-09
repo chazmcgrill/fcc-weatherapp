@@ -1,11 +1,11 @@
 const APIURL = "https://fcc-weather-api.glitch.me/";
-let tempChange = document.querySelector('.tempChange');
-let location = document.querySelector('.location');
-let weather = document.querySelector('.weather');
-let tempVal = document.querySelectorAll('.temp');
-let altTemp = document.querySelector('.altTemp');
-let icon = document.querySelector('.icon');
-let temp = {};
+let tempChange = document.querySelector('.tempChange'),
+    locationEl = document.querySelector('.location'),
+    weather = document.querySelector('.weather'),
+    tempVal = document.querySelectorAll('.temp'),
+    altTemp = document.querySelector('.altTemp'),
+    icon = document.querySelector('.icon'),
+    temp = {};
 
 // on page load get geolocation and generate api url
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,7 +36,7 @@ function weatherUpdate(data) {
 
   icon.setAttribute('src', data.weather[0].icon);
   weather.innerText = data.weather[0].main;
-  location.innerText = data.name;
+  locationEl.innerText = data.name;
 
   document.getElementById('tempc').innerHTML = temp.c;
   document.getElementById('tempf').innerHTML = temp.f;
