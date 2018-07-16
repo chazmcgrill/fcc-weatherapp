@@ -1,2 +1,2 @@
-# fcc-weatherapp
-freeCodeCamp Local Weather App
+# Weather App
+Local Weather App

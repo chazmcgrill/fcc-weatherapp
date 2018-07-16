@@ -27,6 +27,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-config.codekit3
+# dist folder #
+dist
+node_modules
 
 # End of https://www.gitignore.io/api/osx
+
+

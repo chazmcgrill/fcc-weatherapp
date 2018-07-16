@@ -1,0 +1,33 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "local weather application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chazmcgrill/weather.git"
+  },
+  "keywords": [
+    "weather",
+    "ajax",
+    "javascript"
+  ],
+  "author": "Charlie Taylor <mail@charlietaylorcoder.com> (https://charlietaylorcoder.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chazmcgrill/weather/issues"
+  },
+  "homepage": "https://github.com/chazmcgrill/weather#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.4"
+  }
+}
