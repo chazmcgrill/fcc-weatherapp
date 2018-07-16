@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto')
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono')
 
 $accent: #2b90d9
-$light: #d9e1e8
+$light: white
 $dark: #9baec8
 $black: #282c37
 
 html
-  font-family: 'Roboto'
+  font-family: 'Roboto Mono'
   font-size: 20px
   letter-spacing: 0.2px
   height: 100%
@@ -25,23 +25,31 @@ body
   padding: 15px 15px 25px
   margin: 20px auto
   background: $light
-  border-radius: 3px
+  border-radius: 30px
   box-shadow: 0 3px 6px rgba($black,0.16), 0 3px 6px rgba($black,0.23)
 
 .location
-  font-size: 1rem
+  font-size: 0.8rem
   margin: 10px 0
   color: $accent
 
 .weather
   margin-top: 0
 
-.icon
-  width: 70px
+.temp
+  margin: 0
+  font-size: 5rem
+
+  span
+    top: 0
+    font-size: 1rem
+
+@import './sections/sprite.sass'
 
 button
   font-size: 0.8rem
   background: $accent
+  font-family: inherit
   border: 2px solid $accent
   padding: 8px 12px
   border-radius: 4px

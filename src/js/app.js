@@ -4,7 +4,7 @@ let tempChange = document.querySelector('.tempChange'),
     weather = document.querySelector('.weather'),
     tempVal = document.querySelectorAll('.temp'),
     altTemp = document.querySelector('.altTemp'),
-    icon = document.querySelector('.icon'),
+    icon = document.getElementById('icon'),
     temp = {};
 
 // on page load get geolocation and generate api url
@@ -29,13 +29,24 @@ function getWeather(url) {
     });
 }
 
-// update screen with api data
-function weatherUpdate(data) {
-  temp.f = `${Math.round((data.main.temp * 1.8) + 32)}&deg;F`;
-  temp.c = `${Math.round(data.main.temp)}&deg;C`;
+function getIcon(weather) {
+  console.log(weather);
+  switch(weather) {
+    case "rain":
+      return "icon-rain";
+    default:
+      return "icon-cloud";
+  }
+}
 
-  icon.setAttribute('src', data.weather[0].icon);
-  weather.innerText = data.weather[0].main;
+// update screen with api data
+async function weatherUpdate(data) {
+  temp.f = `${Math.round((data.main.temp * 1.8) + 32)}<span>&deg;F</span>`;
+  temp.c = `${Math.round(data.main.temp)}<span>&deg;C</span>`;
+
+  const weatherMain = data.weather[0].main;
+  icon.classList.add(getIcon(weatherMain.toLowerCase()));
+  weather.innerText = weatherMain;
   locationEl.innerText = data.name;
 
   document.getElementById('tempc').innerHTML = temp.c;
@@ -47,3 +58,6 @@ tempChange.addEventListener('click', () => {
   tempVal.forEach(val => val.classList.toggle('hidden'));
   altTemp.innerText = altTemp.innerText === 'C' ? 'F' : 'C';
 });
+
+
+// weather conditions: rain, shower rain, light rain, moderate rain, snow, few clouds, scattered clouds, broken clouds, clouds, drizzling, clear sky, thunderstorm, mist, fog, or smoke
