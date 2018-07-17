@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono')
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700')
 
 $accent: #2b90d9
-$light: white
+$light: #f8f8ff
 $dark: #9baec8
 $black: #282c37
 
+*
+  margin: 0
+
 html
   font-family: 'Roboto Mono'
-  font-size: 20px
-  letter-spacing: 0.2px
+  font-size: 22px
   height: 100%
-  background: $dark
+  background: $accent
   text-align: center
   color: $black
 
@@ -20,68 +22,77 @@ body
   flex-direction: column
   justify-content: space-between
 
+h1
+  margin-top: 20px
+  font-size: 1.6rem
+  font-weight: 700
+
 .container
   max-width: 280px
-  padding: 15px 15px 25px
+  padding: 30px 15px
   margin: 20px auto
   background: $light
   border-radius: 30px
   box-shadow: 0 3px 6px rgba($black,0.16), 0 3px 6px rgba($black,0.23)
 
-.location
-  font-size: 0.8rem
-  margin: 10px 0
-  color: $accent
-
-.weather
-  margin-top: 0
-
-.temp
-  margin: 0
-  font-size: 5rem
-
-  span
-    top: 0
-    font-size: 1rem
-
 @import './sections/sprite.sass'
 
-button
+.weather
+  margin-top: 10px
+  font-weight: 700
+
+.location
   font-size: 0.8rem
-  background: $accent
-  font-family: inherit
-  border: 2px solid $accent
-  padding: 8px 12px
-  border-radius: 4px
-  outline: none
-  color: $light
-  cursor: pointer
-  transition: background-color 0.5s, color 0.5s
+  margin-top: 10px
+  color: $accent
+  
+.temp
+  font-size: 5rem
+  line-height: 5rem
+  padding-left: 30px
 
-  &:hover
-    background-color: $light
-    color: $accent
-
-a
-  color: black
-  text-decoration: none
-  transition: color 0.5s
-
-  &:hover
-    color: $accent
+  span
+    vertical-align: top
+    font-size: 1rem
 
 .hidden
   display: none
 
+button
+  font-family: inherit
+  font-size: 0.8rem
+  background-color: $light
+  color: $accent
+  border: 2px solid $accent
+  border-radius: 4px
+  margin-top: 15px
+  padding: 8px 12px
+  outline: none
+  cursor: pointer
+  transition: background-color 0.3s ease-in, color 0.3s ease-in
+
+  &:hover
+    background-color: $accent
+    color: $light
+
 footer
   display: flex
   justify-content: space-around
+  margin-bottom: 30px
 
   p
     font-size: 0.5rem
 
   .icons
     width: 150px
-    margin: 0 auto
+    margin: 0 auto 10px
     display: flex
     justify-content: space-between
+
+  a
+    color: black
+    text-decoration: none
+    transition: color 0.5s
+
+    &:hover
+      color: $light

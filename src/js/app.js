@@ -30,12 +30,25 @@ function getWeather(url) {
 }
 
 function getIcon(weather) {
-  console.log(weather);
   switch(weather) {
-    case "rain":
-      return "icon-rain";
-    default:
+    case "few clouds":
+    case "scattered clouds":
+    case "clouds":
       return "icon-cloud";
+    case "broken clouds":
+      return "icon-part-cloud-day";
+    case "snow":
+      return "icon-snow";
+    case "thunderstorm":
+      return "icon-thunderstorm"
+    case "clear":
+      return "icon-clear-day"
+    case "mist":
+    case "fog":
+    case "smoke":
+      return "icon-fog";
+    default:
+      return "icon-rain";
   }
 }
 
@@ -60,4 +73,4 @@ tempChange.addEventListener('click', () => {
 });
 
 
-// weather conditions: rain, shower rain, light rain, moderate rain, snow, few clouds, scattered clouds, broken clouds, clouds, drizzling, clear sky, thunderstorm, mist, fog, or smoke
+
