@@ -12,8 +12,8 @@ const paths = {
 }
  
 gulp.task('templates', () => {
-  return gulp.src('./src/*.pug')
-    .pipe(pug({pretty: true}))
+  return gulp.src('./src/!(_)*.pug')
+    .pipe(pug({ pretty: true }))
     .pipe(gulp.dest('dist'));
 });
 

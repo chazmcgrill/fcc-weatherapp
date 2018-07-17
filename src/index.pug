@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Local Weather
+    title Weathers - Local Weather App
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     script(src="https://use.fontawesome.com/d891ebaa12.js")
@@ -11,16 +11,15 @@ html(lang="en")
     .site-content
       h1 weathers
       .container
-        #icon.icon.icon-rain
-        .weather Rain
-        .location Leeds
+        #icon.icon
+        .weather
+        .location
         .temp-box
-          .temp#tempc 22
-            span &deg;C
+          .temp#tempc
           .temp#tempf.hidden
         button.tempChange convert to &deg;
           span.altTemp F
 
-    include includes/footer.pug
+    include includes/_footer.pug
         
-    //- script(src="app.js")
+    script(src="app.js")
