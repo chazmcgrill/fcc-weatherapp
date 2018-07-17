@@ -7,12 +7,12 @@ const pug = require('gulp-pug');
 
 const paths = {
   sass: ['./src/css/**/*.sass'],
-  pug: ['./src/*.pug'],
+  pug: ['./src/**/*.pug'],
   js: ['./src/js/**/*.js']
 }
  
 gulp.task('templates', () => {
-  return gulp.src('./src/!(_)*.pug')
+  return gulp.src('./src/**/!(_)*.pug')
     .pipe(pug({ pretty: true }))
     .pipe(gulp.dest('dist'));
 });
@@ -23,12 +23,11 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('scripts', (done) => {
-  gulp.src('src/js/*.js')
+gulp.task('scripts', () => {
+  return gulp.src('src/js/*.js')
     .pipe(uglify())
     .pipe(concat('app.js'))
     .pipe(gulp.dest('dist'));
-  done();
 });
 
 gulp.task('imageMin', () => {
