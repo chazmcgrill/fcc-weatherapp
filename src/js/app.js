@@ -1,7 +1,7 @@
 const APIURL = "https://fcc-weather-api.glitch.me/";
 let tempChange = document.querySelector('.tempChange'),
     locationEl = document.querySelector('.location'),
-    weather = document.querySelector('.weather'),
+    weatherEl = document.querySelector('.weather'),
     tempVal = document.querySelectorAll('.temp'),
     altTemp = document.querySelector('.altTemp'),
     icon = document.getElementById('icon'),
@@ -17,18 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// call api using es6 promises
+// ajax request using fetch with error handling
 function getWeather(url) {
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      weatherUpdate(data);
-    })
-    .catch(error => {
-      weather.innerText = error;
-    });
+  try {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        weatherUpdate(data);
+      })
+      .catch(error => {
+        weatherEl.innerText = error;
+      });
+  } catch (error) {
+    weatherEl.innerText = error;
+  }
 }
 
+// returns correct icon depending on weather 
 function getIcon(weather) {
   switch(weather) {
     case "few clouds":
@@ -52,14 +57,21 @@ function getIcon(weather) {
   }
 }
 
-// update screen with api data
-async function weatherUpdate(data) {
-  temp.f = `${Math.round((data.main.temp * 1.8) + 32)}<span>&deg;F</span>`;
-  temp.c = `${Math.round(data.main.temp)}<span>&deg;C</span>`;
+// returns temperature markup
+function tempMarkup(temp, metric) {
+  const t = Math.round(metric === 'F' ? (temp * 1.8) + 32 : temp);
+  return `${t}<span>&deg;${metric}</span>`; 
+}
 
-  const weatherMain = data.weather[0].main;
+// update screen with api data
+function weatherUpdate(data) {
+  const { main, weather } = data;
+  temp.c = tempMarkup(main.temp, 'C');
+  temp.f = tempMarkup(main.temp, 'F');
+
+  const weatherMain = weather[0].main;
   icon.classList.add(getIcon(weatherMain.toLowerCase()));
-  weather.innerText = weatherMain;
+  weatherEl.innerText = weatherMain;
   locationEl.innerText = data.name;
 
   document.getElementById('tempc').innerHTML = temp.c;
