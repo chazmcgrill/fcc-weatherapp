@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function getWeather(url) {
   try {
     fetch(url)
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         weatherUpdate(data);
       })
-      .catch(error => {
-        weatherEl.innerText = error;
+      .catch(err => {
+        weatherEl.innerText = err;
       });
-  } catch (error) {
-    weatherEl.innerText = error;
+  } catch (err) {
+    weatherEl.innerText = err;
   }
 }
 

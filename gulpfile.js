@@ -7,8 +7,8 @@ const pug = require('gulp-pug');
 
 const paths = {
   sass: ['./src/css/**/*.sass'],
-  pug: ['./src/**/*.pug'],
-  js: ['./src/js/**/*.js']
+  pug:  ['./src/**/*.pug'],
+  js:   ['./src/js/**/*.js']
 }
  
 gulp.task('templates', () => {
